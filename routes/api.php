@@ -60,3 +60,10 @@ Route::get('frase', function(Request $request){
     $resultado = $nota1 + $nota2 + $nota3 + $nota4 + $nota5 / $divisao;
     return $resultado;
 });
+
+route::get('conta6', function(Request $request){
+    $numero1=$request->input('number');
+    $numero2=$request->input('number2');
+    $resultado = $numero2 / $numero1;
+    return $resultado;
+ });
