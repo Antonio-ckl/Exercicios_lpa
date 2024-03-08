@@ -13,3 +13,10 @@ Route::get('frase', function(Request $request){
     $idade=$request->input('year');
     return "Meu Nome é " . $nome . " Tenho " . $idade . " anos de idade";
  });
+
+ Route::get('frase2', function(Request $request){
+    $nome=$request->input('name');
+    $nasci=$request->input('ano');
+    $cidade=$request->input('city');
+    return "Meu Nome é " . $nome . " Nasci no Ano de " . $nasci . " E Moro em " . $cidade;
+ });
