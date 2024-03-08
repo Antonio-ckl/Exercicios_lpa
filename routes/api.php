@@ -97,3 +97,9 @@ route::get('salario', function(Request $request){
     $valorComAumento= $salario + $valorAcrescido ;
 return "o salario anterior era de " . $salario . " A porcentagem acrecida foi de " . $percentual . " que resultou em um salario de " . $valorComAumento; 
 });
+
+route::get('Pontos', function(Request $request){
+    $gastos=$request->input('salario');
+    $valorAcrescido= $gastos/10;
+    return "voce ganhou: " . $valorAcrescido . " de Pontos!!!";
+});
