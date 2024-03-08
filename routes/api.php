@@ -26,3 +26,4 @@ Route::get('frase', function(Request $request){
     $numero2=$request->input('number2');
     $resultado = $numero1 + $numero2;
     return $resultado;
+ });
