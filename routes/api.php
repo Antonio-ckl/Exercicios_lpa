@@ -20,3 +20,9 @@ Route::get('frase', function(Request $request){
     $cidade=$request->input('city');
     return "Meu Nome é " . $nome . " Nasci no Ano de " . $nasci . " E Moro em " . $cidade;
  });
+
+ route::get('conta', function(Request $request){
+    $numero1=$request->input('number');
+    $numero2=$request->input('number2');
+    $resultado = $numero1 + $numero2;
+    return $resultado;
