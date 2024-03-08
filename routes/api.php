@@ -81,3 +81,11 @@ route::get('conta6', function(Request $request){
     $resultado= $base*$altura;
     return $resultado;
  });
+
+ route::get('test', function(Request $request){
+    $valorOriginal=$request->input('valor');
+    $percentual=$request->input('percentual');
+    $valorDesconto= $valorOriginal/100 * $percentual;
+    $valorComDesconto= $valorOriginal - $valorDesconto;
+return $valorComDesconto ; 
+});
