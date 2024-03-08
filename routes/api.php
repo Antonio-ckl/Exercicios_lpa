@@ -27,3 +27,11 @@ Route::get('frase', function(Request $request){
     $resultado = $numero1 + $numero2;
     return $resultado;
  });
+
+ route::get('conta2', function(Request $request){
+    $numero1=$request->input('number');
+    $numero2=$request->input('number2');
+    $numero3=$request->input("number3");
+    $resultado= $numero1 - $numero2 - $numero3;
+    return $resultado;
+ });
