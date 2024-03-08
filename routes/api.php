@@ -50,3 +50,13 @@ Route::get('frase', function(Request $request){
     return $resultado;
  });
  
+ route::get('conta5', function(Request $request){
+    $nota1=$request->input('number');
+    $nota2=$request->input('number2');
+    $nota3=$request->input("number3");
+    $nota4=$request->input("number4");
+    $nota5=$request->input("number5");
+    $divisao=$request->input("number6");
+    $resultado = $nota1 + $nota2 + $nota3 + $nota4 + $nota5 / $divisao;
+    return $resultado;
+});
