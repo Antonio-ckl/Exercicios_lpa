@@ -103,3 +103,11 @@ route::get('Pontos', function(Request $request){
     $valorAcrescido= $gastos/10;
     return "voce ganhou: " . $valorAcrescido . " de Pontos!!!";
 });
+
+    
+route::get('comissao', function(Request $request){
+    $ganhoTotal=$request->input('valor');
+    $valorComissao= $ganhoTotal/100 * 5 ;
+ return $valorComissao ; 
+ }); 
+ 
