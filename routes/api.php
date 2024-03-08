@@ -74,3 +74,10 @@ route::get('conta6', function(Request $request){
     $resultado = $numero1 * $numero2;
     return "o dobro do numero " . $numero1 . "é = " . $resultado ;
  });
+
+ route::get('retangulo', function(Request $request){
+    $base=$request->input('base');
+    $altura=$request->input('altura');
+    $resultado= $base*$altura;
+    return $resultado;
+ });
