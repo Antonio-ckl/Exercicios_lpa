@@ -89,3 +89,11 @@ route::get('conta6', function(Request $request){
     $valorComDesconto= $valorOriginal - $valorDesconto;
 return $valorComDesconto ; 
 });
+
+route::get('salario', function(Request $request){
+    $salario=$request->input('salario');
+    $percentual=$request->input('percentual');
+    $valorAcrescido= $salario/100 * $percentual;
+    $valorComAumento= $salario + $valorAcrescido ;
+return "o salario anterior era de " . $salario . " A porcentagem acrecida foi de " . $percentual . " que resultou em um salario de " . $valorComAumento; 
+});
