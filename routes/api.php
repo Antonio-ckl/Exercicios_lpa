@@ -67,3 +67,10 @@ route::get('conta6', function(Request $request){
     $resultado = $numero2 / $numero1;
     return $resultado;
  });
+
+ route::get('conta7', function(Request $request){
+    $numero1=$request->input('number');
+    $numero2=$request->input('number2');
+    $resultado = $numero1 * $numero2;
+    return "o dobro do numero " . $numero1 . "é = " . $resultado ;
+ });
