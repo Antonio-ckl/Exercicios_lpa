@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('receber/nome', function(Request $request){
+Route::get('receber nome', function(Request $request){
     $nome=$request->input('name');
     return $nome;
 });
@@ -56,8 +56,7 @@ Route::get('frase', function(Request $request){
     $nota3=$request->input("number3");
     $nota4=$request->input("number4");
     $nota5=$request->input("number5");
-    $divisao=$request->input("number6");
-    $resultado = $nota1 + $nota2 + $nota3 + $nota4 + $nota5 / $divisao;
+    $resultado = ($nota1 + $nota2 + $nota3 + $nota4 + $nota5) / 5 ;
     return $resultado;
 });
 
@@ -70,9 +69,8 @@ route::get('conta6', function(Request $request){
 
  route::get('conta7', function(Request $request){
     $numero1=$request->input('number');
-    $numero2=$request->input('number2');
-    $resultado = $numero1 * $numero2;
-    return "o dobro do numero " . $numero1 . "é = " . $resultado ;
+    $resultado = $numero1 * 2 ;
+    return "o dobro do numero " . $numero1 . "é" . " " .  "=" . $resultado ;
  });
 
  route::get('retangulo', function(Request $request){
@@ -95,7 +93,7 @@ route::get('salario', function(Request $request){
     $percentual=$request->input('percentual');
     $valorAcrescido= $salario/100 * $percentual;
     $valorComAumento= $salario + $valorAcrescido ;
-return "o salario anterior era de " . $salario . " A porcentagem acrecida foi de " . $percentual . " que resultou em um salario de " . $valorComAumento; 
+return "o salario anterior era de " . $salario . " A porcentagem acrescida foi de " . $percentual ."%" . " que resultou em um salario de " . $valorComAumento; 
 });
 
 route::get('Pontos', function(Request $request){
@@ -125,6 +123,6 @@ route::get('produto', function(Request $request){
     $preco=$request->input('produto');
     $quantidadeComprado=$request->input('quantidade');
     $precoTotal=$preco*$quantidadeComprado;
-    return $precoTotal;
+    return "R$" . $precoTotal;
     });
     
