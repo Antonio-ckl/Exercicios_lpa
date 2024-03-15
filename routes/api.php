@@ -3,6 +3,24 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+Route::get('exemplo condicao', function (request $request){
+ $idade=$request->input('idade');
+   $retorno= "";
+   if($idade >= 18){
+$retorno= "maior de idade";
+   }
+else {
+   $retorno = "Menor de idade";
+}
+if($idade >= 100){
+   $retorno= "Como você ta vivo?";
+}
+
+return $retorno;
+}); 
+
+
+
 Route::get('receber nome', function(Request $request){
     $nome=$request->input('name');
     return $nome;
