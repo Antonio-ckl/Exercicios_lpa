@@ -144,20 +144,88 @@ route::get('produto', function(Request $request){
     return "R$" . $precoTotal;
     });
 
-    Route::get('verifica\idade', function (request $request){
+    Route::get('verifica/Idade', function (request $request){
       $idade=$request->input('idade');
         $retorno= "";
         if($idade >= 18){
      $retorno= "maior de idade";
-        }
+}
      else {
         $retorno = "Menor de idade";
-     }
+}
      if($idade >= 100){
         $retorno= "Como você ta vivo?";
-     }
+}
      
      return $retorno;
      }); 
-     
-    
+
+     Route::get('Verificar/Par', function (request $request){
+$numero=$request->input('numero');
+if($numero %2 ==0){
+ return "par";
+}
+else {
+   return "impar";
+}
+});
+
+Route::get('verifica/mais10', function (request $request){
+   $numero=$request->input('numero');
+     if($numero > 10){
+  return "maior que 10";
+}
+elseif($numero=10){
+   return "numero igual a 10";
+}
+else {
+   return "menor que 10";
+}
+});
+
+Route::get('verifica/calor', function (request $request){
+   $temperatura=$request->input('temp');
+if($temperatura>30){
+   return "Esta quente";
+}
+else {
+   return "esta frio";
+}
+});
+
+Route::get('verifica/positivo', function (request $request){
+   $numero=$request->input('numero');
+     if($numero > 0){
+  return "positivo";
+}
+elseif($numero<0){
+   return "negativo";
+}
+else {
+   return "igual a 0";
+}
+});
+
+Route::get('numero/maior', function (request $request){
+   $numero1=$request->input('numero1');
+   $numero2=$request->input('numero2');
+if($numero1>$numero2){
+   return "numero maior é " . $numero1;
+}
+elseif($numero1<$numero2) {
+   return "o numero maior é " . $numero2 ;
+}
+else{
+   return "eles são iguais";
+}
+});
+
+Route::get('divisivel', function (request $request){
+   $numero=$request->input('numero');
+   if($numero %3 ==0){
+    return "divisivel";
+   }
+   else {
+      return "não divisivel";
+   }
+   });
