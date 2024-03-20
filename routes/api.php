@@ -143,4 +143,21 @@ route::get('produto', function(Request $request){
     $precoTotal=$preco*$quantidadeComprado;
     return "R$" . $precoTotal;
     });
+
+    Route::get('verifica\idade', function (request $request){
+      $idade=$request->input('idade');
+        $retorno= "";
+        if($idade >= 18){
+     $retorno= "maior de idade";
+        }
+     else {
+        $retorno = "Menor de idade";
+     }
+     if($idade >= 100){
+        $retorno= "Como você ta vivo?";
+     }
+     
+     return $retorno;
+     }); 
+     
     
