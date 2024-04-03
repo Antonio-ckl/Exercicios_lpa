@@ -446,3 +446,47 @@ Route::get('atividade/19', function (request $request){
       return $numero/$numero2;
    }
 });
+
+Route::get('atividade//1', function (request $request){
+   $nota=$request->input('nota');
+   $nota2=$request->input('nota2');
+   $nota3=$request->input('nota3');
+   $media= ($nota+$nota2+$nota3)/3;
+   if ($media>=7)
+   return "aprovado com a media " . $media;
+else {
+   return "reprovado com a media " . $media;
+}
+});
+
+Route::get('atividade//2', function (request $request) {
+   $renda=$request->input('renda');
+   if($renda<= 1900){
+   return "isento de imposto";
+   }
+   if ($renda>=1901){
+      if($renda<=2800)
+      return "7% de imposto ";
+   }
+   if($renda){
+if ($renda>=2801)
+if ($renda<3700)
+return "15% de imposto"; 
+   }
+    if($renda>=3700){
+      return " 22% de imposto";
+    }
+
+
+});
+
+Route::get('atividade//3', function (request $request){
+$ano=$request->input('ano');
+if ($ano%4==0){
+return "é bissexto";
+}
+else {
+   return "nao é bissexto";
+}
+});
+
