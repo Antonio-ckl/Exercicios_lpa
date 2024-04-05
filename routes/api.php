@@ -466,15 +466,15 @@ Route::get('atividade//2', function (request $request) {
    }
    if ($renda>=1901){
       if($renda<=2800)
-      return "7% de imposto ";
+      return "o valor do imposto a ser paga e de " . $renda*7/100;
    }
    if($renda){
 if ($renda>=2801)
 if ($renda<3700)
-return "15% de imposto"; 
+return "o valor do imposto a ser paga e de " . $renda*15/100; 
    }
     if($renda>=3700){
-      return " 22% de imposto";
+      return "o valor do imposto a ser paga e de " . $renda*22/100;
     }
 
 
@@ -490,3 +490,18 @@ else {
 }
 });
 
+Route::get('atividade//4', function (request $request){
+   $valor=$request->input('valor');
+
+   if ($valor>1000){
+      return "o valor a ser pago e de R$" . $valor-($valor*15/100);
+   }
+   else {
+      return "o valor a ser pago é de R$" . $valor;
+   }
+});
+
+Route::get('atividade//4', function (request $request){
+   $peso=$request->input('peso');
+   $altura=$request->input('altura');
+});
