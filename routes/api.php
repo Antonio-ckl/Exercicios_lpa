@@ -501,7 +501,23 @@ Route::get('atividade//4', function (request $request){
    }
 });
 
-Route::get('atividade//4', function (request $request){
+Route::get('atividade//5', function (request $request){
    $peso=$request->input('peso');
    $altura=$request->input('altura');
+   $calculo=$peso/($altura*$altura);
+   if ($calculo<18.5){
+      return " abaixo do peso";
+   }
+   if($calculo>=18.5 && $calculo<=29.99 ){
+   return "peso normal";
+}
+   if($calculo>=30 && $calculo<=34.9){
+   return "obesidade classe 1";
+   }
+if($calculo>=35 && $calculo<=39.9){
+return "obesidade classe 2";
+}
+if($calculo>=40){
+return "obesidade morbida";
+}
 });
